@@ -1,4 +1,4 @@
-const { DB_USER = 'postgres', DB_PASSWORD = 'root', DB_NAME = 'car_rental', DB_HOST = '127.0.0.1', DB_PORT = 5432 } = process.env;
+const { DB_USER = 'postgres', DB_PASSWORD = 'root', DB_NAME = 'ecommerce_app', DB_HOST = '127.0.0.1', DB_PORT = 5432 } = process.env;
 
 module.exports = {
   development: {

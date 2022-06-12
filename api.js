@@ -1,18 +1,24 @@
 require('dotenv').config();
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan');
+const ApplicationController = require('./app/controllers/ApplicationController');
+const applicationController = new ApplicationController();
+const UserController = require('./app/controllers/UserController');
+const userController = new UserController();
 // const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT;
 
-// const pool = require('./db');
-
 // app.use(cors());
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 app.use(express.json());
 
 //! ROUTES --->
+app.get('/', applicationController.hadleGetRoot);
+app.get('/api/users', userController.handleGetUser);
+app.post('/api/users', userController.handleRegister);
+
 // app.get('/', (req, res) => {
 //   res.status(200).json({
 //     status: 'OK',
